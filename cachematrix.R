@@ -36,3 +36,16 @@ cacheSolve <- function(x, ...) {
   x$setinversematrix(mx)
   mx
 }
+
+    
+## testing the 2 functions above without the hashes as per below
+## m1 <- matrix(c(1/2, -1/4, -1, 3/4), nrow = 2, ncol = 2) 
+## myMatrix_object <- makeCacheMatrix(m1)
+## cacheSolve(myMatrix_object)
+
+# returns (and caches) the matrix inverse of m1 which is equal to
+# matrix(c(6,2, 8,4), nrow = 2, ncol = 2)
+# check m1 %*% matrix(c(6,2, 8,4), nrow = 2, ncol = 2)
+# gives the 2 by 2 identity matrix matrix(c(1,0, 0,1), nrow = 2, ncol = 2)
+# doing cacheSolve(myMatrix_object) a second time should simply fetch (but not
+# recalculate) the inverse of m1 (and report that it only fetched it)
